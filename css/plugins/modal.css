@@ -1,0 +1,200 @@
+/* Modal create link */
+#modal-create-link .modal-form {
+	margin-top: 26px;
+}
+#modal-create-link .modal-form form label {
+	margin-bottom: 9px;
+	text-align: start;
+}
+#modal-create-link .modal-form form input {
+	margin-bottom: 21px;
+}
+
+/* Modal copy link */
+#modal-copy-link .modal-form {
+	margin-top: 18px;
+}
+#modal-copy-link .modal-form form {
+	flex-direction: row;
+}
+#modal-copy-link .modal-form form input {
+	margin-bottom: 0;
+}
+
+/* Modal save link */
+#modal-save-link .modal-form form .button {
+	margin-top: 30px;
+}
+
+/* Modal success link */
+#modal-success-link .modal-wrapper {
+	padding: 0px 0px 30px 0px;
+	width:100%;
+}
+#modal-success-link .modal-wrapper .modal-top {
+	background: linear-gradient( 81.76deg,#0090FF 0%,#00C4FF 100%);
+	width: 100%;
+	border-radius: 13px 13px 0px 0px;
+	padding: 25px 25px 10px 25px;
+	color: #FFF;
+	font-size: 20px;
+	line-height: 24px;
+}
+#modal-success-link .modal-wrapper .modal-top b {
+	color: #FFF;
+	font-size: 20px;
+	line-height: 24px;
+}
+#modal-success-link .modal-wrapper .modal-title {
+	margin-top: 35px;
+}
+#modal-success-link .modal-form a {
+	width: 150px;
+	min-width: unset;
+}
+#modal-success-link .modal-form a:nth-of-type(2) {
+	margin-left: 15px;
+}
+
+/* Modal withdrawal */
+#modal-withdrawal .modal-title {
+	margin: 0 0 20px 0;
+	font-size: 24px;
+	line-height: 25px;
+}
+
+
+.jquery-modal #modal-waiting .modal-wrapper .modal-title {
+	margin-top:0;
+	font-size: 24px;
+	line-height: 112.4%;
+}
+.jquery-modal #modal-waiting  .modal-wrapper .modal-title span {
+	color:#FF9900 !important;
+	font-size: 24px;
+	line-height: 112.4%;
+}
+.jquery-modal #modal-waiting  .modal-wrapper img {
+	max-width:100%;
+}
+
+
+/* DEFAULT */
+.modal .reject-link,
+label {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 16px;
+}
+.modal .reject-link,
+.modal .reject-link:visited {
+	display: block;
+	margin-top: 15px;
+	color: #2093FF;
+	text-decoration: underline;
+}
+.modal .reject-link:hover {
+	color: #F90;
+}
+
+.jquery-modal .ref-modal-form label span {
+	color:#ff7900 !important;
+	font-weight:600;
+font-size: 14px;
+    line-height: 16px;
+}
+
+#form-create-link #phone.error {
+	border-color: red;
+}
+
+/* Modal Social Contact Section */
+.modal-social-contact {
+	margin-top: 30px;
+	padding-top: 25px;
+	border-top: 1px solid #E6E6E6;
+	text-align: center;
+}
+
+.modal-social-title {
+	font-size: 16px;
+	line-height: 20px;
+	color: #2C3E50;
+	margin: 0 0 20px 0;
+	font-weight: 400;
+}
+
+.modal-social-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.modal-social-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 12px 24px;
+	border-radius: 10px;
+	background: #fff;
+	border: 2px solid #E6E6E6;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	font-size: 15px;
+	font-weight: 500;
+	min-width: 140px;
+}
+
+.modal-social-btn img {
+	width: 24px;
+	height: 24px;
+}
+
+.modal-social-btn--telegram {
+	color: #0088CC;
+}
+
+.modal-social-btn--instagram {
+	color: #E4405F;
+}
+
+.modal-social-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-social-btn--telegram:hover {
+	background: #0088CC;
+	color: #fff;
+	border-color: #0088CC;
+}
+
+.modal-social-btn--instagram:hover {
+	background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+	color: #fff;
+	border-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+	#modal-copy-link .modal-form form {
+		flex-direction: column;
+	}
+	#modal-copy-link .modal-form form #input_copy {
+		margin: 0 0 10px 0;
+	}
+	.jquery-modal #modal-waiting .modal-wrapper .modal-title,
+	.jquery-modal #modal-waiting  .modal-wrapper .modal-title span{
+		font-size: 20px;
+	}
+
+	.modal-social-buttons {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.modal-social-btn {
+		width: 100%;
+	}
+}

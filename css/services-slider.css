@@ -1,0 +1,314 @@
+/* ===================================
+   Services Slider CSS
+   Adds slider functionality to services section
+   while preserving existing service card styles
+   =================================== */
+
+/* CSS Custom Properties for Slider */
+:root {
+  --slider-transition-speed: 0.5s;
+  --slider-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --slider-arrow-size: 48px;
+  --slider-dot-size: 12px;
+  --slider-spacing: 24px;
+}
+
+/* ===================================
+   Override Grid with Flex for Slider
+   =================================== */
+
+/* When .services__items has slider__track class, use flex instead of grid */
+.services__items.slider__track {
+  display: flex !important; /* Override grid from services-block.css */
+  grid-template-columns: unset !important; /* Remove grid columns */
+  column-gap: 0 !important; /* Remove grid gap */
+  row-gap: 0 !important; /* Remove grid row gap */
+  transition: transform var(--slider-transition-speed)
+    var(--slider-transition-easing);
+  will-change: transform;
+}
+
+/* ===================================
+   Slider Core Structure
+   =================================== */
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; /* Space for arrows */
+  padding-top: 120px; /* Space for absolutely positioned icons at top */
+}
+
+.slider__viewport {
+  overflow: hidden; /* Hide off-screen slides */
+  width: 100%;
+  position: relative;
+  padding-top: 60px; /* Extra space for icons extending above cards */
+  margin-top: -60px; /* Pull back up to maintain positioning */
+}
+
+/* Service items with slider__slide class */
+.slider--services .services__item.slider__slide {
+  flex: 0 0 100%; /* Mobile: 1 card */
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.5s ease;
+  /* All other .services__item styles remain from services-block.css */
+}
+
+/* Ensure service items maintain proper display and spacing */
+.slider--services .services__item {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  /* Restore original padding from services-block.css */
+  /* Note: horizontal padding is handled by .slider__slide, so we only set vertical here */
+  padding-top: 4rem !important;
+  padding-bottom: 1.25rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  /* Ensure proper sizing */
+  min-width: 280px;
+  /* Remove shadow */
+  box-shadow: none !important;
+}
+
+/* Ensure internal spacing matches original */
+.slider--services .services__top {
+  gap: 1.5625rem;
+}
+
+/* Ensure card title sizing matches original (desktop) */
+.slider--services .services__item h4 {
+  font-size: 1.5rem;
+}
+
+/* Fix icon positioning for slider context */
+.slider--services .services__item > img,
+.slider--services .services__item > picture {
+  /* Maintain absolute positioning from services-block.css */
+  position: absolute;
+  top: -3.375rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 6.375rem;
+  height: 6.75rem;
+  z-index: 1;
+}
+
+/* ===================================
+   Slider Navigation Arrows
+   =================================== */
+
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+  cursor: pointer;
+  border: none;
+}
+
+.slider__arrow:hover {
+  background-color: #ff8c00;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.slider__arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider__arrow:focus-visible {
+  outline: 3px solid #ff8c00;
+  outline-offset: 2px;
+}
+
+.slider__arrow--prev {
+  left: -13px;
+}
+
+.slider__arrow--next {
+  right: -13px;
+}
+
+.slider__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.slider__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===================================
+   Slider Dots Navigation
+   =================================== */
+
+.slider__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.slider__dot {
+  width: var(--slider-dot-size);
+  height: var(--slider-dot-size);
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.slider__dot:hover {
+  background-color: #7f8c8d;
+  transform: scale(1.2);
+}
+
+.slider__dot:focus-visible {
+  outline: 2px solid #ff8c00;
+  outline-offset: 2px;
+}
+
+.slider__dot--active {
+  background-color: #ff8c00;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* ===================================
+   Responsive Design - Desktop
+   =================================== */
+
+@media (min-width: 1150px) {
+  .slider--services .services__item.slider__slide {
+    flex: 0 0 33.333%; /* Desktop: 3 cards */
+    max-width: 33.333%;
+  }
+
+  .slider {
+    padding: 0 50px;
+  }
+
+  /* Ensure cards have proper minimum width on larger screens */
+  .slider--services .services__item {
+    min-width: 280px;
+  }
+
+  .slider__arrow--prev {
+    left: 0;
+  }
+
+  .slider__arrow--next {
+    right: 0;
+  }
+
+  /* Perspective effect: scale down and fade side cards */
+  .slider--services .services__item.slider__slide {
+    transform: scale(0.85);
+    /* opacity: 0.6; */
+  }
+
+  /* Center card at full scale and prominence */
+  .slider--services .slider__slide--center {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    z-index: 2;
+    position: relative;
+  }
+}
+
+/* ===================================
+   Accessibility & Motion
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .services__items.slider__track {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #ff8c00;
+  outline-offset: 2px;
+}
+
+/* ===================================
+   Mobile Adaptivity - Stack Info Boxes
+   =================================== */
+
+@media (max-width: 767px) {
+  /* Stack the three info boxes vertically on mobile */
+  .slider--services .services__top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  /* Make each box full width */
+  .slider--services .services__box {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .slider--services .services__box:last-child {
+    border-bottom: none;
+  }
+
+  /* Adjust font sizes for mobile */
+  .slider--services .services__box span {
+    font-size: 12px;
+  }
+
+  .slider--services .services__box p {
+    font-size: 16px;
+  }
+
+  /* Adjust price */
+  .slider--services .services__price p {
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust buttons for mobile */
+  .slider--services .services__buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .slider--services .services__buttons a {
+    width: 100% !important;
+    font-size: 16px !important;
+    padding: 12px 10px !important;
+  }
+
+  /* Adjust card title */
+  .slider--services .services__item h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}

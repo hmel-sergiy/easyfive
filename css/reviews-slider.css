@@ -1,0 +1,195 @@
+/* ===================================
+   Reviews Slider CSS
+   Same rules as services slider
+   =================================== */
+
+/* CSS Custom Properties */
+:root {
+  --slider-transition-speed: 0.5s;
+  --slider-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix reviews__body width issue */
+.reviews__body:has(.slider--reviews) {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  overflow: visible !important;
+}
+
+/* Override existing reviews layout with flex for slider */
+.reviews__wrapper.slider__track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  transition: transform var(--slider-transition-speed)
+    var(--slider-transition-easing);
+  will-change: transform;
+}
+
+/* Slider wrapper for reviews */
+.slider--reviews {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.slider--reviews .slider__viewport {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Review slides with slider__slide class */
+.slider--reviews .reviews__slide.slider__slide {
+  flex: 0 0 100%; /* Mobile: 1 card */
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0 !important;
+  transition: all 0.5s ease;
+}
+
+/* Review card styling */
+.slider--reviews .reviews__slide {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Colored block placeholder for screenshots - all same color */
+.reviews__screenshot {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  background: #6c63ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+/* Navigation Arrows - same as services slider */
+.slider--reviews .slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: all 0.3s ease;
+  color: #2c3e50;
+  cursor: pointer;
+  border: none;
+}
+
+.slider--reviews .slider__arrow:hover {
+  background-color: #ff8c00;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.slider--reviews .slider__arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slider--reviews .slider__arrow--prev {
+  left: -13px;
+}
+
+.slider--reviews .slider__arrow--next {
+  right: -13px;
+}
+
+.slider--reviews .slider__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Dots Navigation */
+.slider--reviews .slider__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.slider--reviews .slider__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.slider--reviews .slider__dot:hover {
+  background-color: #7f8c8d;
+  transform: scale(1.2);
+}
+
+.slider--reviews .slider__dot--active {
+  background-color: #ff8c00;
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Responsive - Desktop */
+@media (min-width: 1150px) {
+  .slider--reviews .reviews__slide.slider__slide {
+    flex: 0 0 33.333%; /* Desktop: 3 cards */
+    max-width: 33.333%;
+  }
+
+  .slider--reviews {
+    padding: 0 50px;
+  }
+
+  .slider--reviews .slider__arrow--prev {
+    left: 0;
+  }
+
+  .slider--reviews .slider__arrow--next {
+    right: 0;
+  }
+
+  /* Perspective effect: scale down side cards */
+  .slider--reviews .reviews__slide.slider__slide {
+    transform: scale(0.85);
+  }
+
+  /* Center card at full scale */
+  .slider--reviews .slider__slide--center {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    z-index: 2;
+    position: relative;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reviews__wrapper.slider__track {
+    transition-duration: 0.01ms !important;
+  }
+}

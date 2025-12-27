@@ -1070,7 +1070,7 @@ body * {
   transform: rotate(-90deg);
   transition: 0.5s;
   cursor: pointer;
-  background-image: url("/wp-content/themes/kursach/images/back.svg");
+  background-image: url("/images/icons/back.svg");
   background-repeat: no-repeat;
 }
 
@@ -1444,7 +1444,7 @@ body * {
 }
 
 .hero .wrapper .hero__wrapper .hero__left .hero__title {
-  font-size: 64px;
+  font-size: 49px;
   margin-bottom: 10px;
   margin-top: 0;
   font-weight: 700;
@@ -1476,13 +1476,13 @@ body * {
 }
 
 .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item p {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 0 15px;
 }
 
 .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item b {
   display: block;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   margin-bottom: 7px;
 }
@@ -1607,7 +1607,7 @@ body * {
   .benefit-list__item
   .benefit-item__title {
   margin: 16px 0 10px;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 700;
 }
 
@@ -2120,7 +2120,7 @@ body * {
   .servicefaq__right
   .servicefaq-right__list
   .servicefaq-right-list__item:before {
-  content: url("../images/chevron-faq.svg");
+  content: url("../images/icons/chevron-faq.svg");
   display: block;
   width: 17px;
   height: 10px;
@@ -2186,7 +2186,7 @@ body * {
   .service-clients__left
   .service-clients-left__title {
   color: #fff;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 24px;
 }
@@ -2254,10 +2254,13 @@ body * {
 .kursach-num .wrapper .kursach-num__wrapper .kursach-num__title {
   margin-bottom: 60px;
   font-size: 35px;
+  margin-left: 36%;
   margin-top: 0;
   font-weight: 700;
   line-height: 1.04 !important;
 }
+
+
 
 .kursach-num .wrapper .kursach-num__wrapper .kursach-num__list {
   display: grid;
@@ -2300,7 +2303,7 @@ body * {
   .kursach-num-list-item__text
   b {
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   margin-top: 10px;
 }
@@ -5051,6 +5054,7 @@ form.comment-form button[type="submit"],
   font-weight: 700;
   line-height: 112.4%;
   color: #fff;
+
 }
 
 @supports (

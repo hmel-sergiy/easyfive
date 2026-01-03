@@ -55,6 +55,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel='stylesheet' id='style-main-css' href='css/style.css' media='all' />
 <!-- <link rel='stylesheet' id='style-custom-css' href='https://kursach.site/wp-content/themes/kursach/css/custom.css?1&#038;ver=6.9' media='all' /> -->
 <link rel='stylesheet' id='style-custom-css' href='css/custom.css' media='all' />
+<link rel='stylesheet' id='workstep-timeline-css' href='css/workstep-timeline.css' media='all' />
 <!-- <link rel='stylesheet' id='style-services-block-css' href='https://kursach.site/wp-content/themes/kursach/css/services-block.css?ver=6.9' media='all' /> -->
 <link rel='stylesheet' id='style-services-block-css' href='css/plugins/services-block.css' media='all' />
 <link rel='stylesheet' id='style-services-slider-css' href='css/services-slider.css' media='all' />
@@ -833,13 +834,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <ul class="hero__list hero-list">
             <li class="hero-list__item">
-              <p><b>Від 2х годин</b>Швидкий термін виконання</p>
+              <p>Виконання від 2х годин</p>
             </li>
             <li class="hero-list__item">
-              <p><b>Фахівці </b>Виконують виключно професіонали</p>
+              <p>Виконують виключно професіонали</p>
             </li>
             <li class="hero-list__item">
-              <p><b>- 20%</b> на перше замовлення</p>
+              <p>- 20% на перше замовлення</p>
             </li>
           </ul>
           <div class="hero__btns">
@@ -923,53 +924,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         href="#" title="Створити посилання">Створити посилання</a>
     </div>
   </div>
-  <div class="workstep new-service-section">
+  <section class="workstep new-service-section">
     <div class="wrapper">
       <div class="workstep__wrapper">
         <h2 class="workstep__title h3">
         </h2>
-        <div class="workstep__list workstep-list">
-          <div class="workstep-list__item workstep-item">
-            <div class="workstep-item__num">
-              <b> 1 </b>крок
+        <div class="workstep__timeline">
+          <article class="workstep__step workstep__step--odd">
+            <div class="workstep__step-node" data-number="1"></div>
+            <div class="workstep__step-content">
+              <h3 class="workstep__step-title">Напиши нам в Telegram </b> або Instagram </h3>
+              <p class="workstep__step-text">Тему роботи. Тип роботи (курсова, дипломна, реферат, есе). Обсяг сторінок. Унікальність (%). Термін виконання</p>
             </div>
-            <div class="workstep-item__title">Напиши нам в Telegram </b> або Instagram </div>
-            <div class="workstep-item__text">Тему роботи. Тип роботи (курсова, дипломна, реферат, есе). Обсяг сторінок. Унікальність (%). Термін виконання</div>
-            <a id="open-modal-contact" href="#" class="button button--orange workstep-item__btn button--orange--fsc">
-              Залишити заявку </a>
-          </div>
-          <div class="workstep-list__item workstep-item">
-            <div class="workstep-item__num">
-              <b> 2 </b> крок
+          </article>
+
+          <article class="workstep__step workstep__step--even">
+            <div class="workstep__step-node" data-number="2"></div>
+            <div class="workstep__step-content">
+              <h3 class="workstep__step-title">Ми зв'яжемось з тобою</h3>
+              <p class="workstep__step-text">Наші експерти швидко опрацюють твій запит, уточнять усі нюанси та дадуть відповіді на запитання. </p>
             </div>
-            <div class="workstep-item__title">Ми зв'яжемось з тобою</div>
-            <div class="workstep-item__text">Наші експерти швидко опрацюють твій запит, уточнять усі нюанси та дадуть відповіді на запитання. </div>
-          </div>
-          <div class="workstep-list__item workstep-item">
-            <div class="workstep-item__num">
-              <b> 3 </b>крок
+          </article>
+
+          <article class="workstep__step workstep__step--odd">
+            <div class="workstep__step-node" data-number="3"></div>
+            <div class="workstep__step-content">
+              <h3 class="workstep__step-title">Розрахунок вартості </h3>
+              <p class="workstep__step-text">Після аналізу твого завдання ми швидко повідомимо точну ціну. Потім здійснюється оплата. Ми гарантуємо прозорість та відповідальність. </p>
             </div>
-            <div class="workstep-item__title">Розрахунок вартості </div>
-            <div class="workstep-item__text">Після аналізу твого завдання ми швидко повідомимо точну ціну. Потім здійснюється оплата. Ми гарантуємо прозорість та відповідальність. </div>
-          </div>
-          <div class="workstep-list__item workstep-item">
-            <div class="workstep-item__num">
-              <b> 4 </b>крок
+          </article>
+
+          <article class="workstep__step workstep__step--even">
+            <div class="workstep__step-node" data-number="4"></div>
+            <div class="workstep__step-content">
+              <h3 class="workstep__step-title">Виконання роботи </h3>
+              <p class="workstep__step-text">Після узгодження ми почнемо виконувати замовлення. Робота буде готова в обумовлені терміни, а якість - гарантована. </p>
             </div>
-            <div class="workstep-item__title">Виконання роботи </div>
-            <div class="workstep-item__text">Після узгодження ми почнемо виконувати замовлення. Робота буде готова в обумовлені терміни, а якість - гарантована. </div>
-          </div>
-          <div class="workstep-list__item workstep-item">
-            <div class="workstep-item__num">
-              <b> 5 </b> крок
+          </article>
+
+          <article class="workstep__step workstep__step--odd">
+            <div class="workstep__step-node" data-number="5"></div>
+            <div class="workstep__step-content">
+              <h3 class="workstep__step-title">Отримай готову роботу </h3>
+              <p class="workstep__step-text">Завершена робота підкорить викладача! Якщо потрібно внести вправлення - ми зробимо це БЕЗКОШТОВНО. </p>
             </div>
-            <div class="workstep-item__title">Отримай готову роботу </div>
-            <div class="workstep-item__text">Завершена робота підкорить викладача! Якщо потрібно внести вправлення - ми зробимо це БЕЗКОШТОВНО. </div>
-          </div>
+          </article>
+        </div>
+        <div class="workstep__cta">
+          <a id="open-modal-contact" href="#" class="button button--orange button--orange--fsc">
+            Залишити заявку
+          </a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <div class="servicefaq new-service-section">
     <div class="wrapper">
       <div class="servicefaq__wrapper">
@@ -979,15 +987,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="servicefaq-left__title">Гарантії </div>
             <div class="servicefaq-left__list servicefaq-left-list">
               <div class="servicefaq-left-list__item servicefaq-left-item">
-                <img src="images/garant/garant02.svg" class="servicefaq-left-item__image" alt="Гарантія" title="Гарантія" width="70" height="70">
+                <img src="images/garant/garant02.png" class="servicefaq-left-item__image" alt="Гарантія" title="Гарантія" width="70" height="70">
                 <div class="servicefaq-left-item__text">Ми працюємо офіційно </div>
               </div>
               <div class="servicefaq-left-list__item servicefaq-left-item">
-                <img src="images/garant/garant03.svg" class="servicefaq-left-item__image" alt="Гарантія" title="Гарантія" width="70" height="70">
+                <img src="images/garant/garant03.png" class="servicefaq-left-item__image" alt="Гарантія" title="Гарантія" width="70" height="70">
                 <div class="servicefaq-left-item__text">Складаємо договір перед початком співпраці </div>
               </div>
               <div class="servicefaq-left-list__item servicefaq-left-item">
-                <img src="images/garant/garant01.svg" class="servicefaq-left-item__image" alt="Гарантія" title="Гарантія" width="70" height="70">
+                <img src="images/garant/garant01.png" class="servicefaq-left-item__image" alt="Гарантія" title="Гарантія" width="70" height="70">
                 <div class="servicefaq-left-item__text">Всі роботи проходять перевірку на антиплагіат </div>
               </div>
             </div>
@@ -1120,47 +1128,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
               <!-- Review Slide 1 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-1.jpg');"></div>
               </div>
 
               <!-- Review Slide 2 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-2.jpg');"></div>
               </div>
 
               <!-- Review Slide 3 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-3.jpg');"></div>
               </div>
 
               <!-- Review Slide 4 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-4.jpg');"></div>
               </div>
 
               <!-- Review Slide 5 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-5.jpg');"></div>
               </div>
 
               <!-- Review Slide 6 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-6.jpg');"></div>
               </div>
 
               <!-- Review Slide 7 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-7.jpg');"></div>
               </div>
 
               <!-- Review Slide 8 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-8.jpg');"></div>
               </div>
 
               <!-- Review Slide 9 -->
               <div class="reviews__slide slider__slide">
-                <div class="reviews__screenshot"></div>
+                <div class="reviews__screenshot" style="background-image: url('images/reviews/review-9.jpg');"></div>
               </div>
 
             </div>
@@ -1184,15 +1192,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
       </div>
-      <a href="#" class="button button--orange open-modal-contact button--orange--fsc">Дізнатись ціну </a>
+      <div class="contact-button-wrapper">
+          <a href="#" class="button button--orange open-modal-contact button--orange--fsc">Дізнатись ціну </a>
+      </div>
     </div>
   </div>
 </section> 
 
-<div class="kursach-nums new-service-section">
+<!-- <div class="kursach-nums new-service-section">
 <div class="wrapper">
 </div>
-</div>		
+</div>		 -->
 
 <svg class="wave-text" viewBox="0 0 1920 334" xmlns="http://www.w3.org/2000/svg" style="all: initial; margin-top:50px">
 

@@ -26,6 +26,7 @@
   transition: transform var(--slider-transition-speed)
     var(--slider-transition-easing);
   will-change: transform;
+  /* iOS Safari: These properties are now on the .slider container */
 }
 
 /* ===================================
@@ -37,7 +38,13 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 20px; /* Space for arrows */
-  padding-top: 120px; /* Space for absolutely positioned icons at top */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y; /* Allow vertical scroll, we handle horizontal */
+  cursor: grab;
+}
+
+.slider:active {
+  cursor: grabbing;
 }
 
 .slider__viewport {
@@ -46,6 +53,16 @@
   position: relative;
   padding-top: 60px; /* Extra space for icons extending above cards */
   margin-top: -60px; /* Pull back up to maintain positioning */
+  /* iOS Safari: Ensure touch events work correctly */
+  -webkit-overflow-scrolling: touch;
+  /* Don't block pointer events - let them bubble up to slider container */
+  pointer-events: none;
+}
+
+/* But re-enable pointer events for the track and its children */
+.slider__viewport > .slider__track,
+.slider__viewport > .slider__track > * {
+  pointer-events: auto;
 }
 
 /* Service items with slider__slide class */
@@ -58,6 +75,13 @@
   padding-right: 10px;
   transition: all 0.5s ease;
   /* All other .services__item styles remain from services-block.css */
+}
+
+/* Ensure buttons and links are touchable */
+.slider--services .services__item a,
+.slider--services .services__item button {
+  pointer-events: auto;
+  touch-action: auto;
 }
 
 /* Ensure service items maintain proper display and spacing */
@@ -73,8 +97,8 @@
   padding-right: 1.25rem !important;
   /* Ensure proper sizing */
   min-width: 280px;
-  /* Remove shadow */
-  box-shadow: none !important;
+  /* Preserve original box-shadow from services-block.css */
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Ensure internal spacing matches original */
@@ -122,6 +146,9 @@
   color: #2c3e50;
   cursor: pointer;
   border: none;
+  /* Ensure arrows don't interfere with touch events on mobile */
+  pointer-events: auto;
+  touch-action: auto;
 }
 
 .slider__arrow:hover {

@@ -521,7 +521,7 @@ body * {
 }
 
 .hero2 {
-  padding: 100px 0;
+  padding: 100px 0 10px 0;
 }
 
 .post .post-top .wrapper .post-category {
@@ -1464,7 +1464,7 @@ body * {
 .hero .wrapper .hero__wrapper .hero__left .hero__list {
   max-width: 535px;
   list-style: none;
-  margin: 0;
+  margin: 0 0 30px;
   padding: 43px 0;
   font-size: 18px;
   display: grid;
@@ -1475,9 +1475,41 @@ body * {
   justify-content: space-between;
 }
 
+.hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 16px 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #ff6b00 0%, #f90 100%);
+  border-radius: 8px 0 0 8px;
+}
+
+.hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+}
+
 .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item p {
   font-size: 16px;
-  margin: 0 0 15px;
+  font-weight: 700;
+  margin: 0;
 }
 
 .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item b {
@@ -2254,13 +2286,12 @@ body * {
 .kursach-num .wrapper .kursach-num__wrapper .kursach-num__title {
   margin-bottom: 60px;
   font-size: 35px;
-  margin-left: 36%;
+  display: flex;
+  justify-content: center;
   margin-top: 0;
   font-weight: 700;
   line-height: 1.04 !important;
 }
-
-
 
 .kursach-num .wrapper .kursach-num__wrapper .kursach-num__list {
   display: grid;
@@ -2620,6 +2651,15 @@ body * {
   .hero .wrapper .hero__wrapper .hero__left .hero__list {
     padding: 40px 0;
     font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item {
+    padding: 14px 12px;
+  }
+
+  .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item::before {
+    width: 3px;
   }
 
   .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item b {
@@ -2773,7 +2813,7 @@ body * {
     .service-clients__wrapper
     .service-clients__left
     .service-clients-left__title {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .service-clients
@@ -3469,6 +3509,16 @@ body * {
   .hero .wrapper .hero__wrapper .hero__left .hero__list {
     -moz-column-gap: 8px;
     column-gap: 8px;
+    padding: 40px 0;
+    margin-bottom: 20px;
+  }
+
+  .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item {
+    padding: 12px 10px;
+  }
+
+  .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item::before {
+    width: 3px;
   }
 
   .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item p {
@@ -5016,7 +5066,7 @@ form.comment-form button[type="submit"],
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -5054,7 +5104,6 @@ form.comment-form button[type="submit"],
   font-weight: 700;
   line-height: 112.4%;
   color: #fff;
-
 }
 
 @supports (
@@ -5559,4 +5608,10 @@ form.comment-form button[type="submit"],
 #gsb-buttons-17162 [data-scb][data-tooltip-dir]::after,
 [data-scb][class*="cooltipz"]::after {
   display: none !important;
+}
+
+.contact-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }

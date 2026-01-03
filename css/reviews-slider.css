@@ -64,12 +64,14 @@
   box-sizing: border-box;
 }
 
-/* Colored block placeholder for screenshots - all same color */
+/* Review screenshot - background images set via inline styles */
 .reviews__screenshot {
-  width: 100%;
-  height: 500px;
-  border-radius: 12px;
   background: #6c63ff;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,6 +79,7 @@
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
   box-sizing: border-box;
+  aspect-ratio: 1/ 2.16;
 }
 
 /* Navigation Arrows - same as services slider */

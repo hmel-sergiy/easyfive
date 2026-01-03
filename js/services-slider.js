@@ -37,7 +37,10 @@ class Slider {
         this.isAnimating = false;
         this.autoplayTimer = null;
         this.touchStartX = 0;
+        this.touchStartY = 0;
         this.touchEndX = 0;
+        this.touchEndY = 0;
+        this.isDragging = false;
 
         // Responsive configuration
         this.breakpoints = {
@@ -215,11 +218,24 @@ class Slider {
             }
         });
 
-        // Touch events
+        // Touch events - attach to slider container instead of track for better Safari compatibility
         if (this.options.enableTouch) {
-            this.track.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
-            this.track.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: true });
-            this.track.addEventListener('touchend', () => this.handleTouchEnd());
+            const touchTarget = this.slider; // Use slider container, not track
+
+            // Bind methods to preserve 'this' context
+            this.boundHandleTouchStart = (e) => this.handleTouchStart(e);
+            this.boundHandleTouchMove = (e) => this.handleTouchMove(e);
+            this.boundHandleTouchEnd = (e) => this.handleTouchEnd(e);
+            this.boundHandleTouchCancel = () => this.handleTouchCancel();
+
+            // touchstart can be passive for better performance
+            touchTarget.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
+            // touchmove CANNOT be passive because we need to preventDefault() for horizontal swipes
+            touchTarget.addEventListener('touchmove', this.boundHandleTouchMove, { passive: false });
+            touchTarget.addEventListener('touchend', this.boundHandleTouchEnd, { passive: true });
+            touchTarget.addEventListener('touchcancel', this.boundHandleTouchCancel, { passive: true });
+
+            console.log('Touch events attached to slider container for Safari compatibility');
         }
 
         // Keyboard navigation
@@ -426,7 +442,18 @@ class Slider {
      * @param {TouchEvent} e - Touch event
      */
     handleTouchStart(e) {
+        if (!e.touches || e.touches.length === 0) {
+            console.warn('touchstart: no touches detected');
+            return;
+        }
+
         this.touchStartX = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
+        this.touchEndX = this.touchStartX;
+        this.touchEndY = this.touchStartY;
+        this.isDragging = false;
+
+        console.log('Touch start:', { x: this.touchStartX, y: this.touchStartY });
     }
 
     /**
@@ -434,28 +461,84 @@ class Slider {
      * @param {TouchEvent} e - Touch event
      */
     handleTouchMove(e) {
+        if (!e.touches || e.touches.length === 0) {
+            console.warn('touchmove: no touches detected');
+            return;
+        }
+
         this.touchEndX = e.touches[0].clientX;
+        this.touchEndY = e.touches[0].clientY;
+
+        // Calculate the horizontal and vertical distances
+        const deltaX = Math.abs(this.touchEndX - this.touchStartX);
+        const deltaY = Math.abs(this.touchEndY - this.touchStartY);
+
+        console.log('Touch move:', { deltaX, deltaY, isDragging: this.isDragging });
+
+        // If movement is primarily horizontal (more horizontal than vertical)
+        if (deltaX > deltaY && deltaX > 10) {
+            // This is a horizontal swipe, prevent default to stop page navigation/scrolling
+            console.log('Preventing default - horizontal swipe detected');
+            e.preventDefault();
+            this.isDragging = true;
+        }
+        // If movement is primarily vertical, allow default scrolling behavior
     }
 
     /**
      * Handle touch end event
+     * @param {TouchEvent} e - Touch event
      */
-    handleTouchEnd() {
-        const swipeThreshold = 50;
-        const diff = this.touchStartX - this.touchEndX;
+    handleTouchEnd(e) {
+        console.log('Touch end:', { isDragging: this.isDragging, startX: this.touchStartX, endX: this.touchEndX });
 
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
+        // Only process if we were dragging horizontally
+        if (!this.isDragging) {
+            console.log('Not dragging, ignoring touch end');
+            this.resetTouch();
+            return;
+        }
+
+        const swipeThreshold = 50;
+        const deltaX = this.touchStartX - this.touchEndX;
+        const deltaY = Math.abs(this.touchStartY - this.touchEndY);
+
+        console.log('Touch end delta:', { deltaX, deltaY, threshold: swipeThreshold });
+
+        // Ensure it's a horizontal swipe (horizontal movement > vertical movement)
+        if (Math.abs(deltaX) > swipeThreshold && Math.abs(deltaX) > deltaY) {
+            if (deltaX > 0) {
                 // Swipe left - go to next
+                console.log('Swipe left detected - going to next slide');
                 this.next();
             } else {
                 // Swipe right - go to previous
+                console.log('Swipe right detected - going to previous slide');
                 this.prev();
             }
+        } else {
+            console.log('Swipe threshold not met or too vertical');
         }
 
+        this.resetTouch();
+    }
+
+    /**
+     * Handle touch cancel event (iOS Safari can cancel touches)
+     */
+    handleTouchCancel() {
+        this.resetTouch();
+    }
+
+    /**
+     * Reset touch tracking variables
+     */
+    resetTouch() {
         this.touchStartX = 0;
+        this.touchStartY = 0;
         this.touchEndX = 0;
+        this.touchEndY = 0;
+        this.isDragging = false;
     }
 
     /**

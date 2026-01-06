@@ -1070,7 +1070,7 @@ body * {
   transform: rotate(-90deg);
   transition: 0.5s;
   cursor: pointer;
-  background-image: url("/images/icons/back.svg");
+  background-image: url("../images/icons/back.svg");
   background-repeat: no-repeat;
 }
 

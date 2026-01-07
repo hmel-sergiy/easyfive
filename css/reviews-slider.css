@@ -66,8 +66,9 @@
 
 /* Review screenshot - background images set via inline styles */
 .reviews__screenshot {
-  background: #6c63ff;
-  background-size: contain;
+  background: transparent;
+  /* #6c63ff */
+  background-size: auto 100%;;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -79,7 +80,7 @@
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
   box-sizing: border-box;
-  aspect-ratio: 1/ 2.16;
+  aspect-ratio: 1/ 1.77;
 }
 
 /* Navigation Arrows - same as services slider */

@@ -4889,7 +4889,7 @@ form.comment-form button[type="submit"]:hover,
 
 .jquery-modal .modal .modal-wrapper .modal-form,
 .modal-form.price {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .jquery-modal .modal .modal-wrapper .modal-form form,

@@ -283,12 +283,16 @@ table {
   color: #ffffff;
 }
 
+/* ============================================
+   RUNNING LINE - EASY FIVE PASTEL PALETTE
+   ============================================ */
+
 .marquee-wrap {
   width: 100%;
   max-width: 100%;
   padding: 0;
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px 0 rgba(45, 42, 38, 0.12);
   background: rgb(255, 242, 2);
   position: absolute;
   margin-top: 115px;
@@ -327,7 +331,7 @@ table {
 }
 
 .marquee__text span {
-  font-weight: 600;
+  font-weight: 700;
   padding: 0px 10px;
   font-size: 36px;
 }

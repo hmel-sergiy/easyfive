@@ -1675,9 +1675,16 @@ flex-direction:column;
 		margin-top:50px
 	}
 }
+@media (max-width: 1149px) {
+	/* Remove box shadow below desktop breakpoint for cleaner look */
+	.services__item {
+		box-shadow: none !important;
+	}
+}
+
 @media (max-width:47.99875em) {
 	.contacts {
-	margin-bottom:56px;	
+	margin-bottom:56px;
 }
   .contacts__container h1 {
     margin-bottom: .75rem;

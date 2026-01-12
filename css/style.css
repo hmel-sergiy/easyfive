@@ -1490,7 +1490,7 @@ body * {
 }
 
 .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -2356,8 +2356,6 @@ body * {
   height: 140px;
 } */
 
-
-
 .kursach-num
   .wrapper
   .kursach-num__wrapper
@@ -2666,7 +2664,12 @@ body * {
     padding: 14px 12px;
   }
 
-  .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item::before {
+  .hero
+    .wrapper
+    .hero__wrapper
+    .hero__left
+    .hero__list
+    .hero-list__item::before {
     width: 3px;
   }
 
@@ -3525,7 +3528,12 @@ body * {
     padding: 12px 10px;
   }
 
-  .hero .wrapper .hero__wrapper .hero__left .hero__list .hero-list__item::before {
+  .hero
+    .wrapper
+    .hero__wrapper
+    .hero__left
+    .hero__list
+    .hero-list__item::before {
     width: 3px;
   }
 
@@ -5112,6 +5120,8 @@ form.comment-form button[type="submit"],
   font-weight: 700;
   line-height: 112.4%;
   color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+  padding: 20px;
 }
 
 @supports (

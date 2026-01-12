@@ -39,6 +39,13 @@ jQuery(document).ready(function ($) {
         $(this).siblings('ul.sub-menu').toggleClass('open');
     })
 
+    // Also allow clicking on the parent link to expand/collapse submenu
+    $('ul#primary-menu li.menu-item.menu-item-has-children > a').on('click', function (e) {
+        e.preventDefault();
+        $(this).siblings('span.arrow').toggleClass('open');
+        $(this).siblings('ul.sub-menu').toggleClass('open');
+    })
+
     //
     $(window).on('load resize', function () {
         $height = $('.header-wrapper').outerHeight(true);

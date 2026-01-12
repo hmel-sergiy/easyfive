@@ -287,6 +287,13 @@
    Mobile Adaptivity - Stack Info Boxes
    =================================== */
 
+@media (max-width: 1149px) {
+  /* Remove box shadow below desktop breakpoint for cleaner look */
+  .slider--services .services__item {
+    box-shadow: none !important;
+  }
+}
+
 @media (max-width: 767px) {
   /* Stack the three info boxes vertically on mobile */
   .slider--services .services__top {

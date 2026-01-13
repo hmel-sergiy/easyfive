@@ -38,7 +38,8 @@
 }
 
 .services {
-  background-color: #daf3f4
+  background-color: #FFF4DB
+  /* background-color: #daf3f4 */
 }
 .services__container {
   display: flex;

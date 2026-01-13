@@ -2120,7 +2120,8 @@ body * {
   .servicefaq__wrapper
   .servicefaq__content
   .servicefaq__right {
-  background: linear-gradient(91.32deg, #01c4fd 6.52%, #1091dd 96.37%);
+  /* background: linear-gradient(91.32deg, #01c4fd 6.52%, #1091dd 96.37%); */
+  background: #FFF4DB;
   border-radius: 15px;
   padding: 30px;
 }
@@ -3867,7 +3868,9 @@ body * {
 
 .stm-footer .new-footer {
   padding: 43px 0 36px;
-  background: linear-gradient(290deg, #00c8ff -2.2%, #1c6ac6 168.83%);
+  background: linear-gradient(91.31deg, #ff7000 -2.24%, #01c4fd -2.24%, #ff7000 -2.23%, #ff9700 96.37%);
+  /* background: #F4F2F1; */
+  /* background: linear-gradient(290deg, #00c8ff -2.2%, #1c6ac6 168.83%); */
 }
 
 .stm-footer .new-footer .wrapper {
@@ -3981,7 +3984,7 @@ body * {
   .footer_social_wrapper
   .circle_item {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.335);
   border-radius: 50%;
   width: 37px;
   height: 37px;
@@ -5037,8 +5040,10 @@ form.comment-form button[type="submit"],
 
 .page__reviews {
   color: #fff;
-  background: -o-linear-gradient(1deg, #00c8ff -2.2%, #1c6ac6 168.83%);
-  background: linear-gradient(89deg, #00c8ff -2.2%, #1c6ac6 168.83%);
+  background: #F4F2F1;
+  /* background: #F4F2F1; */
+  /* background: -o-linear-gradient(1deg, #00c8ff -2.2%, #1c6ac6 168.83%);
+  background: linear-gradient(89deg, #00c8ff -2.2%, #1c6ac6 168.83%); */
 }
 
 .reviews__container {
@@ -5123,7 +5128,7 @@ form.comment-form button[type="submit"],
   font-style: normal;
   font-weight: 700;
   line-height: 112.4%;
-  color: #fff;
+  color: #000000;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
   padding: 20px;
 }

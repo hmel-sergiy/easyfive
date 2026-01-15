@@ -3406,6 +3406,16 @@ body * {
   .marquee-wrap {
     margin-top: 59px;
   }
+
+  .marquee__text,
+  .marquee__text span {
+    font-size: 20px;
+  }
+
+  .marquee__item {
+    min-height: 32px;
+    gap: 8px;
+  }
   #masthead {
     height: 60px;
   }
@@ -5129,8 +5139,30 @@ form.comment-form button[type="submit"],
   font-weight: 700;
   line-height: 112.4%;
   color: #000000;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
-  padding: 20px;
+  position: relative;
+  padding: 16px 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.reviews__title:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.reviews__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #ff6b00 0%, #f90 100%);
+  border-radius: 8px 0 0 8px;
 }
 
 @supports (
